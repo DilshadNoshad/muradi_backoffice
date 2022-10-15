@@ -8,11 +8,13 @@ declare module '@mui/material/styles' {
     interface Theme {
         status: {
             danger: string;
+            success: string;
         };
     }
     interface ThemeOptions {
         status: {
             danger: React.CSSProperties['color'];
+            success: React.CSSProperties['color'];
         };
     }
 

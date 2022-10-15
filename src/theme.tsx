@@ -1,8 +1,9 @@
-import { colors, createTheme } from "@mui/material";
+import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
     status: {
         danger: '#e53e3e',
+        success: "rgb(0, 200, 83)"
     },
     palette: {
         primary: {
@@ -15,8 +16,9 @@ export const theme = createTheme({
             dark: "#1565C0",
         },
         greyColors: {
-            main: "color: rgb(97, 97, 97)",
-            lightGrey: "color: rgb(158, 158, 158)",
+            main: "#ccc",
+            lightGrey: "#e4e4e4",
+
         }
     }
 })

@@ -1,12 +1,13 @@
+import React from "react";
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 import { alpha, AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, styled, Toolbar, Typography } from "@mui/material";
-import DashboardIcon from '@mui/icons-material/Dashboard';
+
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-import React from "react";
-
+const drawerWidth = 240;
 const StyledToolbar = styled(Toolbar)({
     display: 'flex',
     justifyContent: 'space-between',
@@ -90,8 +91,7 @@ const StyledLogo = styled("div")(({ theme }) => ({
     "&:hover": { backgroundColor: "rgb(237, 231, 246)", color: "white", cursor: "pointer" },
 
 }));
-
-const Navbar: React.FC = () => {
+const Header: React.FC = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
 
@@ -102,10 +102,26 @@ const Navbar: React.FC = () => {
         setAnchorEl(null);
     };
     return (
-        <AppBar position="sticky" >
+        <AppBar
+            position="fixed"
+            sx={{
+                width: { sm: `calc(100% - ${drawerWidth}px)` },
+                ml: { sm: `${drawerWidth}px` },
+            }}
+        >
+
             <StyledToolbar>
+                <IconButton
+                    color="inherit"
+                    aria-label="open drawer"
+                    edge="start"
+                    // onClick={handleDrawerToggle}
+                    sx={{ mr: 2, display: { sm: 'none' } }}
+                >
+                    <MenuIcon />
+                </IconButton>
                 {/* <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>Dashboard</Typography> */}
-                <DashboardIcon sx={{ display: { xs: "block", sm: "none" } }} />
+                {/* <DashboardIcon sx={{ display: { xs: "block", sm: "none" } }} /> */}
                 {/* <Search > */}
                 {/* <InputBase placeholder="Search..." sx={{ width: "100%" }} /> */}
                 {/* </Search> */}
@@ -132,6 +148,8 @@ const Navbar: React.FC = () => {
                 </Icons>
                 <UserBox onClick={handleClick}><Avatar sx={{ width: 30, height: 30 }} alt="Travis Howard" src="https://avatars.githubusercontent.com/u/68327502?v=4" /><Typography component="span">Dilshad</Typography></UserBox>
             </StyledToolbar>
+
+
             <Menu
                 id="demo-positioned-menu"
                 aria-labelledby="demo-positioned-button"
@@ -153,7 +171,8 @@ const Navbar: React.FC = () => {
                 <MenuItem >Logout</MenuItem>
             </Menu>
         </AppBar>
+
     );
 };
 
-export default Navbar;
+export default Header;
