@@ -1,7 +1,8 @@
 import React from 'react'
-import { Box, styled } from "@mui/material"
+import { Avatar, Box, styled, Tooltip } from "@mui/material"
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { mockDataTeam } from '../../data/MocData'
+import UserActions from '../Actions/UserActions';
 
 
 const StyledTable = styled(Box)(({ theme }) => ({
@@ -41,6 +42,13 @@ const UsersTable: React.FC = () => {
     const columns: GridColDef[] = [
         { field: "id", headerName: "ID" },
         {
+            field: "photo",
+            headerName: "Photo",
+            align: "left",
+            renderCell: (avt) => <Tooltip title={avt.row.name}><Avatar src={avt.row.photo} sx={{ width: 46, height: 46 }} /></Tooltip>
+
+        },
+        {
             field: "name",
             headerName: "Name",
             flex: 1,
@@ -62,6 +70,14 @@ const UsersTable: React.FC = () => {
             field: "email",
             headerName: "Email",
             flex: 1,
+        },
+        {
+            field: "actions",
+            headerName: "Actions",
+            flex: 1,
+            type: 'actions',
+            renderCell: (act) => <UserActions />
+
         }
     ];
     return (

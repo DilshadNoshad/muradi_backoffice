@@ -1,8 +1,9 @@
 export const mockDataTeam = [
     {
         id: 1,
-        name: "Jon Snow",
-        email: "jonsnow@gmail.com",
+        name: "Dilshad",
+        photo: "https://avatars.githubusercontent.com/u/68327502?v=4",
+        email: "dilshad@gmail.com",
         age: 35,
         phone: "(665)121-5454",
         access: "admin",
@@ -10,6 +11,7 @@ export const mockDataTeam = [
     {
         id: 2,
         name: "Cersei Lannister",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0gBbSMbh9VGVuts8nyZ_0HcsNdfvTvsefmg&usqp=CAU",
         email: "cerseilannister@gmail.com",
         age: 42,
         phone: "(421)314-2288",
@@ -18,6 +20,7 @@ export const mockDataTeam = [
     {
         id: 3,
         name: "Jaime Lannister",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmIh7V-Sq7K48WnUqtu18enb2Mnm_3fwnDJg&usqp=CAU",
         email: "jaimelannister@gmail.com",
         age: 45,
         phone: "(422)982-6739",
@@ -26,6 +29,7 @@ export const mockDataTeam = [
     {
         id: 4,
         name: "Anya Stark",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUAQOSkZYfkEA301YD7ScojRUNG1lAeFC1tA&usqp=CAU",
         email: "anyastark@gmail.com",
         age: 16,
         phone: "(921)425-6742",
@@ -34,6 +38,7 @@ export const mockDataTeam = [
     {
         id: 5,
         name: "Daenerys Targaryen",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUs73Mz3FqhV8uy2F5TGw_jGvFdzGirConJA&usqp=CAU",
         email: "daenerystargaryen@gmail.com",
         age: 31,
         phone: "(421)445-1189",
@@ -42,6 +47,7 @@ export const mockDataTeam = [
     {
         id: 6,
         name: "Ever Melisandre",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTncxHwv7BXAjmaSBtTzrsp1mVdUkJGEKrUuA&usqp=CAU",
         email: "evermelisandre@gmail.com",
         age: 150,
         phone: "(232)545-6483",
@@ -50,6 +56,7 @@ export const mockDataTeam = [
     {
         id: 7,
         name: "Ferrara Clifford",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1rLseZTJ6YRzvVJvjULknsz76zHB6as7eA&usqp=CAU",
         email: "ferraraclifford@gmail.com",
         age: 44,
         phone: "(543)124-0123",
