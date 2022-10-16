@@ -6,7 +6,7 @@ import { mockDataContacts } from '../../data/MocData'
 
 
 const StyledTable = styled(Box)(({ theme }) => ({
-    margin: "40px 0 0 0",
+    margin: "16px 0 0 0",
     height: 500,
     "& .MuiDataGrid-root": {
         border: "none",

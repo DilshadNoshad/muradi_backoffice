@@ -75,7 +75,7 @@ export default function SideBar() {
                     >
                         <Avatar sx={{ width: 80, height: 80 }} alt="Travis Howard" src="https://avatars.githubusercontent.com/u/68327502?v=4" />
                     </StyledLogo>
-                    <Typography variant="h6" component="span" >Dilshad</Typography>
+                    <Typography variant="h6" component="span" >Super Admin</Typography>
                 </DrawerHeader>
 
                 <SideBarMenus />

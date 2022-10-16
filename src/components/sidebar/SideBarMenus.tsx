@@ -8,6 +8,7 @@ import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PeopleIcon from '@mui/icons-material/People';
 import SettingsIcon from '@mui/icons-material/Settings';
+import TimelineIcon from '@mui/icons-material/Timeline';
 import { Link } from 'react-router-dom';
 const SideBarMenus: React.FC = () => {
     return (
@@ -70,6 +71,14 @@ const SideBarMenus: React.FC = () => {
                             <ArticleIcon />
                         </ListItemIcon>
                         <ListItemText primary="Reports" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton component={Link} to="/graphs">
+                        <ListItemIcon>
+                            <TimelineIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Graphs" />
                     </ListItemButton>
                 </ListItem>
             </List>
