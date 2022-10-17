@@ -1,6 +1,5 @@
 import { Box, CssBaseline, Toolbar } from '@mui/material'
 import React, { PropsWithChildren } from 'react'
-import Header from '../header/Header'
 import SideBar from '../sidebar/SideBar'
 
 const drawerWidth = 240;
@@ -13,7 +12,6 @@ const Layout = (props: PropsWithChildren<Component>) => {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <Header />
             <SideBar />
             <Box
                 component="main"

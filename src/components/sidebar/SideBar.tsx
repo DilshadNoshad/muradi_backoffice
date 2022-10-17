@@ -5,6 +5,8 @@ import React from 'react';
 import styled from "@emotion/styled";
 import { Avatar, Typography } from "@mui/material";
 import SideBarMenus from './SideBarMenus';
+import Header from '../header/Header';
+
 const drawerWidth = 240;
 
 
@@ -37,51 +39,50 @@ export default function SideBar() {
 
 
     return (
-
-
-        <Box
-            component="nav"
-            sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-            aria-label="mailbox folders"
-        >
-            {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-            <Drawer
-
-                variant="temporary"
-                open={mobileOpen}
-                onClose={handleDrawerToggle}
-                ModalProps={{
-                    keepMounted: true, // Better open performance on mobile.
-                }}
-                sx={{
-                    display: { xs: 'block', sm: 'none' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                }}
+        <React.Fragment>
+            <Header onHandleDrawerToggle={handleDrawerToggle} />
+            <Box
+                component="nav"
+                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+                aria-label="mailbox folders"
             >
-                <SideBarMenus />
-            </Drawer>
-            <Drawer
-                variant="permanent"
-                sx={{
-                    display: { xs: 'none', sm: 'block' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                }}
-                open
-            >
-                <DrawerHeader>
-                    {/* <Avatar /> */}
-                    <StyledLogo
+                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+                <Drawer
 
-                    >
-                        <Avatar sx={{ width: 80, height: 80 }} alt="Travis Howard" src="https://avatars.githubusercontent.com/u/68327502?v=4" />
-                    </StyledLogo>
-                    <Typography variant="h6" component="span" >Super Admin</Typography>
-                </DrawerHeader>
+                    variant="temporary"
+                    open={mobileOpen}
+                    onClose={handleDrawerToggle}
+                    ModalProps={{
+                        keepMounted: true, // Better open performance on mobile.
+                    }}
+                    sx={{
+                        display: { xs: 'block', sm: 'none' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                    }}
+                >
+                    <SideBarMenus />
+                </Drawer>
+                <Drawer
+                    variant="permanent"
+                    sx={{
+                        display: { xs: 'none', sm: 'block' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                    }}
+                    open
+                >
+                    <DrawerHeader>
+                        {/* <Avatar /> */}
+                        <StyledLogo
 
-                <SideBarMenus />
-            </Drawer>
-        </Box>
+                        >
+                            <Avatar sx={{ width: 80, height: 80 }} alt="Travis Howard" src="https://avatars.githubusercontent.com/u/68327502?v=4" />
+                        </StyledLogo>
+                        <Typography variant="h6" component="span" >Super Admin</Typography>
+                    </DrawerHeader>
 
-
+                    <SideBarMenus />
+                </Drawer>
+            </Box>
+        </React.Fragment>
     );
 }

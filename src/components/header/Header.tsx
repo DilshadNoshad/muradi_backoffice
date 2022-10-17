@@ -91,7 +91,11 @@ const StyledLogo = styled("div")(({ theme }) => ({
     "&:hover": { backgroundColor: "rgb(237, 231, 246)", color: "white", cursor: "pointer" },
 
 }));
-const Header: React.FC = () => {
+
+type ButtonProps = {
+    onHandleDrawerToggle: (params: any) => any;
+};
+const Header = ({ onHandleDrawerToggle }: ButtonProps) => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
 
@@ -115,7 +119,7 @@ const Header: React.FC = () => {
                     color="inherit"
                     aria-label="open drawer"
                     edge="start"
-                    // onClick={handleDrawerToggle}
+                    onClick={onHandleDrawerToggle}
                     sx={{ mr: 2, display: { sm: 'none' } }}
                 >
                     <MenuIcon />
