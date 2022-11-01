@@ -3043,6 +3043,11 @@ at-least-node@^1.0.0:
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
+autobind-decorator@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/autobind-decorator/-/autobind-decorator-2.4.0.tgz#ea9e1c98708cf3b5b356f7cf9f10f265ff18239c"
+  integrity sha512-OGYhWUO72V6DafbF8PM8rm3EPbfuyMZcJhtm5/n26IDwO18pohE4eNazLoCGhPiXOCD0gEGmrbU3849QvM8bbw==
+
 autoprefixer@^10.4.11:
   version "10.4.12"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.12.tgz#183f30bf0b0722af54ee5ef257f7d4320bb33129"
@@ -3655,6 +3660,11 @@ core-js@^3.19.2:
   version "3.25.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.5.tgz#e86f651a2ca8a0237a5f064c2fe56cef89646e27"
   integrity sha512-nbm6eZSjm+ZuBQxCUPQKQCoUEfFOXjUZ8dTTyikyKaWrTYmAVbykQfwsKE5dBK88u3QCkCrzsx/PPlKfhsvgpw==
+
+core-js@^3.25.5:
+  version "3.26.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.26.0.tgz#a516db0ed0811be10eac5d94f3b8463d03faccfe"
+  integrity sha512-+DkDrhoR4Y0PxDz6rurahuB+I45OsEUv8E1maPTB6OuHRohMMcznBq9TMpdpDMm/hUPob/mJJS3PqgbHpMTQgw==
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -6259,6 +6269,21 @@ jest@^27.4.3:
     import-local "^3.0.2"
     jest-cli "^27.5.1"
 
+jodit-react-ts@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/jodit-react-ts/-/jodit-react-ts-0.9.0.tgz#2f988c7203ffe48b2b95a3cc7516247f9e195814"
+  integrity sha512-DBLYcbRYo+zwwgA0Dc9BGsESr3lz1f3mXGsN2g8X1jdiE89PZ1SChH5V+EHSCu+n04rpUWUZTXPrbH0uPj/7zg==
+  dependencies:
+    jodit "^3.7.2"
+
+jodit@^3.7.2:
+  version "3.21.5"
+  resolved "https://registry.yarnpkg.com/jodit/-/jodit-3.21.5.tgz#a789b9cb6a7dddf547d72d8aed164631d39ab84c"
+  integrity sha512-xseZdZnNYJxTYZoZf3KxQCz9wmgeJjWNUgjDhcFJ7CwCU3F2EkXv2jjK2LqUBn84jFSTqClqx8IgsdrsWB5hOQ==
+  dependencies:
+    autobind-decorator "^2.4.0"
+    core-js "^3.25.5"
+
 js-sdsl@^4.1.4:
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/js-sdsl/-/js-sdsl-4.1.5.tgz#1ff1645e6b4d1b028cd3f862db88c9d887f26e2a"
@@ -7880,6 +7905,11 @@ react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
+
+react-images-uploading@^3.1.7:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/react-images-uploading/-/react-images-uploading-3.1.7.tgz#a53bf0d08624802dc6b74db4ec5695b0bfaf5a5c"
+  integrity sha512-woET50eCezm645iIeP4gCoN7HjdR3T64UXC5l53yd+2vHFp+pwABH8Z/aAO5IXDeC1aP6doQ+K738L701zswAw==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"

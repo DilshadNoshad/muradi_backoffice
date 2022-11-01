@@ -2,7 +2,7 @@ import { Box, CssBaseline, Toolbar } from '@mui/material'
 import React, { PropsWithChildren } from 'react'
 import SideBar from '../sidebar/SideBar'
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 interface Component {
 
     children: React.ReactNode
