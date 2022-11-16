@@ -103,7 +103,7 @@ const NewCategoryForm: React.FC = () => {
       </Box>
       <Box display="flex" justifyContent="end" mt="20px">
         <Button color="secondary" variant="contained">
-          Create New Category
+          Create
         </Button>
       </Box>
     </form>

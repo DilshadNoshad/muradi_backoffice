@@ -249,7 +249,7 @@ const UserForm: React.FC = () => {
           </Box>
           <Box display="flex" justifyContent="end" mt="20px">
             <Button type="submit" color="secondary" variant="contained">
-              Create New User
+              Create
             </Button>
           </Box>
         </form>

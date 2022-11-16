@@ -8,6 +8,7 @@ import ShippingForm from "../Product/ShippingForm";
 import AttributesForm from "../Product/AttributesForm";
 import AdvancedForm from "../Product/AdvancedForm";
 import { Button } from "@mui/material";
+import GeneralTable from "../tables/roles/GeneralTable";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -20,13 +21,14 @@ function TabPanel(props: TabPanelProps) {
 
   return (
     <div
+      style={{ width: "100%" }}
       role="tabpanel"
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ py: 3 }}>{children}</Box>}
+      {value === index && <Box sx={{ p: 1 }}>{children}</Box>}
     </div>
   );
 }
@@ -38,7 +40,7 @@ function a11yProps(index: number) {
   };
 }
 
-export default function ProductTabs() {
+export default function RoleTabs() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -47,30 +49,23 @@ export default function ProductTabs() {
 
   return (
     <Box
+      //   sx={{
+      //     flexGrow: 1,
+      //     maxWidth: { xs: 320, sm: 480, md: 1080 },
+      //   }}
       sx={{
         flexGrow: 1,
-        // maxWidth: { xs: 320, sm: 480, md: 1080 },
+        display: "flex",
+        height: "100%",
       }}
     >
-      <Box display="flex" justifyContent="end" gap="2%" mb="20px">
-        <Button color="secondary" variant="contained">
-          Save
-        </Button>
-        <Button color="primary" variant="contained">
-          Publish
-        </Button>
-      </Box>
       <Tabs
+        orientation="vertical"
         variant="scrollable"
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{
-          borderBottom: 1,
-          borderColor: "divider",
-          bgcolor: "white",
-          borderRadius: "12px",
-        }}
+        sx={{ borderRight: 1, borderColor: "divider" }}
       >
         <Tab label="General" {...a11yProps(0)} />
         <Tab label="Inventory" {...a11yProps(1)} />
@@ -79,20 +74,12 @@ export default function ProductTabs() {
         <Tab label="Advanced" {...a11yProps(4)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <GeneralForm />
+        <GeneralTable />
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        <InventoryForm />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <ShippingForm />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <AttributesForm />
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <AdvancedForm />
-      </TabPanel>
+      <TabPanel value={value} index={1}></TabPanel>
+      <TabPanel value={value} index={2}></TabPanel>
+      <TabPanel value={value} index={3}></TabPanel>
+      <TabPanel value={value} index={4}></TabPanel>
     </Box>
   );
 }

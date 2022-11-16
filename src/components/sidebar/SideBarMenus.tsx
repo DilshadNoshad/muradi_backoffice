@@ -16,7 +16,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import TimelineIcon from "@mui/icons-material/Timeline";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import WidgetsIcon from "@mui/icons-material/Widgets";
-
+import GroupsIcon from "@mui/icons-material/Groups";
 import { Link } from "react-router-dom";
 const SideBarMenus: React.FC = () => {
   const [open, setOpen] = React.useState(true);
@@ -87,7 +87,14 @@ const SideBarMenus: React.FC = () => {
                         </ListItemButton>
                     </ListItem>
                 </Collapse> */}
-
+        <ListItem disablePadding>
+          <ListItemButton component={Link} to="/groups">
+            <ListItemIcon>
+              <GroupsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Groups" />
+          </ListItemButton>
+        </ListItem>
         <ListItem disablePadding>
           <ListItemButton component={Link} to="/users">
             <ListItemIcon>
@@ -97,11 +104,11 @@ const SideBarMenus: React.FC = () => {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton component={Link} to="#">
+          <ListItemButton component={Link} to="/roles">
             <ListItemIcon>
               <ManageAccountsRoundedIcon />
             </ListItemIcon>
-            <ListItemText primary="Role Assign" />
+            <ListItemText primary="Roles" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
