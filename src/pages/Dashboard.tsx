@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import ProductTable from "../components/tables/ProductTable";
-import StatBox from "../components/Boxes/StateBox";
+import StatBox from "../components/boxes/StateBox";
 import ProgressCircle from "../components/graphs/ProgressCircle";
 import PeopleIcon from "@mui/icons-material/People";
 import PaymentsIcon from "@mui/icons-material/Payments";

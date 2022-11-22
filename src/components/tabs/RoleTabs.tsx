@@ -2,11 +2,11 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import GeneralForm from "../Product/GeneralForm";
-import InventoryForm from "../Product/InventoryForm";
-import ShippingForm from "../Product/ShippingForm";
-import AttributesForm from "../Product/AttributesForm";
-import AdvancedForm from "../Product/AdvancedForm";
+import GeneralForm from "../product/GeneralForm";
+import InventoryForm from "../product/InventoryForm";
+import ShippingForm from "../product/ShippingForm";
+import AttributesForm from "../product/AttributesForm";
+import AdvancedForm from "../product/AdvancedForm";
 import { Button } from "@mui/material";
 import GeneralTable from "../tables/roles/GeneralTable";
 

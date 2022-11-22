@@ -8,24 +8,16 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Checkbox from "@mui/material/Checkbox";
-import Avatar from "@mui/material/Avatar";
-import ListItemIcon from "@mui/material/ListItemIcon";
+
 import { theme } from "../../theme";
 import { Link } from "react-router-dom";
 import NewGroupForm from "../forms/NewGroupForm";
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-export default function Groups() {
-  const [expanded, setExpanded] = React.useState<string | false>(false);
+import GroupsList from "./GroupsList";
+import UsersList from "./UsersList";
+import RightsList from "./RightsList";
 
+const Groups: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -42,10 +34,6 @@ export default function Groups() {
     p: 4,
   };
 
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
-    };
   return (
     <Box
       display="grid"
@@ -79,7 +67,7 @@ export default function Groups() {
               sx={{ m: "0 0 10px 0" }}
               align="center"
             >
-              Groups
+              Select Group
             </Typography>
 
             <Box
@@ -92,114 +80,7 @@ export default function Groups() {
                 overflowY: "visible",
               }}
             >
-              <ListItem sx={{ backgroundColor: "white", mb: 1 }} disablePadding>
-                <ListItemButton
-                  // role={undefined}
-                  // onClick={handleToggle(value)}
-                  dense
-                >
-                  <ListItemIcon>
-                    <Checkbox
-                      edge="start"
-                      // checked={checked.indexOf(value) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": "labelId" }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText id={"labelId"} primary={`The Group name`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem sx={{ backgroundColor: "white", mb: 1 }} disablePadding>
-                <ListItemButton
-                  // role={undefined}
-                  // onClick={handleToggle(value)}
-                  dense
-                >
-                  <ListItemIcon>
-                    <Checkbox
-                      edge="start"
-                      // checked={checked.indexOf(value) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": "labelId" }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText id={"labelId"} primary={`The Group name`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem sx={{ backgroundColor: "white", mb: 1 }} disablePadding>
-                <ListItemButton
-                  // role={undefined}
-                  // onClick={handleToggle(value)}
-                  dense
-                >
-                  <ListItemIcon>
-                    <Checkbox
-                      edge="start"
-                      // checked={checked.indexOf(value) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": "labelId" }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText id={"labelId"} primary={`The Group name`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem sx={{ backgroundColor: "white", mb: 1 }} disablePadding>
-                <ListItemButton
-                  // role={undefined}
-                  // onClick={handleToggle(value)}
-                  dense
-                >
-                  <ListItemIcon>
-                    <Checkbox
-                      edge="start"
-                      // checked={checked.indexOf(value) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": "labelId" }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText id={"labelId"} primary={`The Group name`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem sx={{ backgroundColor: "white", mb: 1 }} disablePadding>
-                <ListItemButton
-                  // role={undefined}
-                  // onClick={handleToggle(value)}
-                  dense
-                >
-                  <ListItemIcon>
-                    <Checkbox
-                      edge="start"
-                      // checked={checked.indexOf(value) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": "labelId" }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText id={"labelId"} primary={`The Group name`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem sx={{ backgroundColor: "white", mb: 1 }} disablePadding>
-                <ListItemButton
-                  // role={undefined}
-                  // onClick={handleToggle(value)}
-                  dense
-                >
-                  <ListItemIcon>
-                    <Checkbox
-                      edge="start"
-                      // checked={checked.indexOf(value) !== -1}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": "labelId" }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText id={"labelId"} primary={`The Group name`} />
-                </ListItemButton>
-              </ListItem>
+              <GroupsList />
             </Box>
             <Button
               onClick={handleOpen}
@@ -251,7 +132,7 @@ export default function Groups() {
               sx={{ m: "0 0 10px 0" }}
               align="center"
             >
-              Users
+              Select Users
             </Typography>
             <TextField
               fullWidth
@@ -271,216 +152,8 @@ export default function Groups() {
                 overflowY: "visible",
               }}
             >
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
-              <ListItem
-                sx={{ backgroundColor: "white", mb: 1 }}
-                secondaryAction={
-                  <Checkbox
-                    edge="start"
-                    inputProps={{ "aria-labelledby": "1" }}
-                  />
-                }
-                dense
-                disablePadding
-              >
-                <ListItemButton>
-                  <ListItemAvatar>
-                    <Avatar
-                      alt={`Avatar`}
-                      src={`https://mui.com/static/images/avatar/2.jpg`}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText id="1" primary={`Dilshad Noshad`} />
-                </ListItemButton>
-              </ListItem>
+              {/*----users map here-----*/}
+              <UsersList />
             </Box>
             <Button
               variant="contained"
@@ -521,12 +194,12 @@ export default function Groups() {
               sx={{ m: "0 0 10px 0" }}
               align="center"
             >
-              Rights
+              Select Rights
             </Typography>
 
             <Box
               bgcolor={theme.palette.secondary.light}
-              height="420px"
+              height="360px"
               sx={{
                 p: 1,
                 border: "2px solid #ccc",
@@ -534,279 +207,23 @@ export default function Groups() {
                 overflowY: "visible",
               }}
             >
-              <Accordion
-                expanded={expanded === "panel1"}
-                onChange={handleChange("panel1")}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1bh-content"
-                  id="panel1bh-header"
-                >
-                  <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                    Dashboard
-                  </Typography>
-                  {/* <Typography sx={{ color: "text.secondary" }}>
-                    I am an accordion
-                  </Typography> */}
-                </AccordionSummary>
-                <AccordionDetails>
-                  <ListItem
-                    sx={{
-                      backgroundColor: `${theme.palette.primary.light}`,
-                      mb: 1,
-                    }}
-                    disablePadding
-                  >
-                    <ListItemButton
-                      // role={undefined}
-                      // onClick={handleToggle(value)}
-                      dense
-                    >
-                      <ListItemText id={"labelId"} primary={`Graph`} />
-                      <ListItemIcon>
-                        <Checkbox
-                          edge="end"
-                          // checked={checked.indexOf(value) !== -1}
-                          tabIndex={-1}
-                          disableRipple
-                          inputProps={{ "aria-labelledby": "labelId" }}
-                        />
-                      </ListItemIcon>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem
-                    sx={{
-                      backgroundColor: `${theme.palette.primary.light}`,
-                      mb: 1,
-                    }}
-                    disablePadding
-                  >
-                    <ListItemButton
-                      // role={undefined}
-                      // onClick={handleToggle(value)}
-                      dense
-                    >
-                      <ListItemText id={"labelId"} primary={`Table`} />
-                      <ListItemIcon>
-                        <Checkbox
-                          edge="end"
-                          // checked={checked.indexOf(value) !== -1}
-                          tabIndex={-1}
-                          disableRipple
-                          inputProps={{ "aria-labelledby": "labelId" }}
-                        />
-                      </ListItemIcon>
-                    </ListItemButton>
-                  </ListItem>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion
-                expanded={expanded === "panel2"}
-                onChange={handleChange("panel2")}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel2bh-content"
-                  id="panel2bh-header"
-                >
-                  <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                    Products
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <ListItem
-                    sx={{
-                      backgroundColor: `${theme.palette.primary.light}`,
-                      mb: 1,
-                    }}
-                    disablePadding
-                  >
-                    <ListItemButton
-                      // role={undefined}
-                      // onClick={handleToggle(value)}
-                      dense
-                    >
-                      <ListItemText id={"labelId"} primary={`Add`} />
-                      <ListItemIcon>
-                        <Checkbox
-                          edge="end"
-                          // checked={checked.indexOf(value) !== -1}
-                          tabIndex={-1}
-                          disableRipple
-                          inputProps={{ "aria-labelledby": "labelId" }}
-                        />
-                      </ListItemIcon>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem
-                    sx={{
-                      backgroundColor: `${theme.palette.primary.light}`,
-                      mb: 1,
-                    }}
-                    disablePadding
-                  >
-                    <ListItemButton
-                      // role={undefined}
-                      // onClick={handleToggle(value)}
-                      dense
-                    >
-                      <ListItemText id={"labelId"} primary={`Edit`} />
-                      <ListItemIcon>
-                        <Checkbox
-                          edge="end"
-                          // checked={checked.indexOf(value) !== -1}
-                          tabIndex={-1}
-                          disableRipple
-                          inputProps={{ "aria-labelledby": "labelId" }}
-                        />
-                      </ListItemIcon>
-                    </ListItemButton>
-                  </ListItem>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion
-                expanded={expanded === "panel3"}
-                onChange={handleChange("panel3")}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel3bh-content"
-                  id="panel3bh-header"
-                >
-                  <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                    Users
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <ListItem
-                    sx={{
-                      backgroundColor: `${theme.palette.primary.light}`,
-                      mb: 1,
-                    }}
-                    disablePadding
-                  >
-                    <ListItemButton
-                      // role={undefined}
-                      // onClick={handleToggle(value)}
-                      dense
-                    >
-                      <ListItemText id={"labelId"} primary={`Add`} />
-                      <ListItemIcon>
-                        <Checkbox
-                          edge="end"
-                          // checked={checked.indexOf(value) !== -1}
-                          tabIndex={-1}
-                          disableRipple
-                          inputProps={{ "aria-labelledby": "labelId" }}
-                        />
-                      </ListItemIcon>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem
-                    sx={{
-                      backgroundColor: `${theme.palette.primary.light}`,
-                      mb: 1,
-                    }}
-                    disablePadding
-                  >
-                    <ListItemButton
-                      // role={undefined}
-                      // onClick={handleToggle(value)}
-                      dense
-                    >
-                      <ListItemText id={"labelId"} primary={`Edit`} />
-                      <ListItemIcon>
-                        <Checkbox
-                          edge="end"
-                          // checked={checked.indexOf(value) !== -1}
-                          tabIndex={-1}
-                          disableRipple
-                          inputProps={{ "aria-labelledby": "labelId" }}
-                        />
-                      </ListItemIcon>
-                    </ListItemButton>
-                  </ListItem>
-                </AccordionDetails>
-              </Accordion>
-              <Accordion
-                expanded={expanded === "panel4"}
-                onChange={handleChange("panel4")}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel4bh-content"
-                  id="panel4bh-header"
-                >
-                  <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                    Roles
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <ListItem
-                    sx={{
-                      backgroundColor: `${theme.palette.primary.light}`,
-                      mb: 1,
-                    }}
-                    disablePadding
-                  >
-                    <ListItemButton
-                      // role={undefined}
-                      // onClick={handleToggle(value)}
-                      dense
-                    >
-                      <ListItemText id={"labelId"} primary={`Add`} />
-                      <ListItemIcon>
-                        <Checkbox
-                          edge="end"
-                          // checked={checked.indexOf(value) !== -1}
-                          tabIndex={-1}
-                          disableRipple
-                          inputProps={{ "aria-labelledby": "labelId" }}
-                        />
-                      </ListItemIcon>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem
-                    sx={{
-                      backgroundColor: `${theme.palette.primary.light}`,
-                      mb: 1,
-                    }}
-                    disablePadding
-                  >
-                    <ListItemButton
-                      // role={undefined}
-                      // onClick={handleToggle(value)}
-                      dense
-                    >
-                      <ListItemText id={"labelId"} primary={`Edit`} />
-                      <ListItemIcon>
-                        <Checkbox
-                          edge="end"
-                          // checked={checked.indexOf(value) !== -1}
-                          tabIndex={-1}
-                          disableRipple
-                          inputProps={{ "aria-labelledby": "labelId" }}
-                        />
-                      </ListItemIcon>
-                    </ListItemButton>
-                  </ListItem>
-                </AccordionDetails>
-              </Accordion>
+              <RightsList />
             </Box>
-            {/* <Button
+            <Button
               variant="contained"
               fullWidth
               component={Link}
               to="#"
               sx={{ fontSize: "14px", my: 2, padding: "10px 12px" }}
             >
-              <AddIcon sx={{ mr: "4px" }} />
-              Add
-            </Button> */}
+              {/* <AddIcon sx={{ mr: "4px" }} /> */}
+              Save
+            </Button>
           </Box>
         </Box>
       </Box>
     </Box>
   );
-}
+};
+
+export default Groups;
